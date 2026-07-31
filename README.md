@@ -121,13 +121,8 @@ Run the scripts in the following order.
 ### Task 1 – Data Cleaning
 
 ```bash
-docker run --rm \
--v ${PWD}/data:/app/data \
--v ${PWD}/artifacts:/app/artifacts \
-amls-solution \
-python clean.py --timeout_seconds 600
+docker run --rm -v ${PWD}/data:/app/data -v ${PWD}/artifacts:/app/artifacts amls-solution python clean.py --timeout_seconds 600
 ```
-
 ---
 
 ### Tensor Preparation
