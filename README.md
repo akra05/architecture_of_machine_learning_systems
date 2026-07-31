@@ -204,6 +204,3 @@ A complete discussion of all experiments, ablation studies, and design decisions
 
 ---
 
-- The dataset is **not included** in this repository.
-- All required models and artifacts are generated automatically during execution.
-- The project was developed for a **CPU-only Docker environment without internet access**, following the requirements of the AMLS course.
