@@ -1,6 +1,6 @@
 # AMLS – Real vs. AI-Generated Image Classification
 
-University project for the **Advanced Machine Learning Systems (AMLS)** course at **TU Berlin**.
+University project for the **Architecture of Machine Learning Systems (AMLS)** course at **TU Berlin**.
 
 The goal of this project was to develop a machine learning pipeline capable of distinguishing real images from AI-generated images under strict resource constraints, including **CPU-only execution**, **fixed time budgets per training step**, and **no internet access during runtime**.
 
