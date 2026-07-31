@@ -69,9 +69,8 @@ solution/
 ├── prepare.py               # Tensor preparation
 ├── train.py                 # Task 2: Model training
 ├── predict.py               # Task 2: Inference and threshold calibration
-├── train_augmented.py       # Task 3
-├── predict_augmented.py
-└── ...
+├── train_augmented.py       # Task 3: Train augmented Model
+└── predict_augmented.py     # Task 3: Inference and threshold calibration
 
 report.pdf                   # Complete report
 ```
