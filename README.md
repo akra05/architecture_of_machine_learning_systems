@@ -95,6 +95,7 @@ solution/
 
 # Running the Project
 
+Run from Bash, WSL, or PowerShell – cmd.exe is not supported.
 The entire pipeline is designed to run inside a Docker container.
 
 ## 1. Build the Docker image
@@ -136,11 +137,7 @@ docker run --rm -v ${PWD}/data:/app/data -v ${PWD}/artifacts:/app/artifacts amls
 ### Tensor Preparation
 
 ```bash
-docker run --rm \
--v ${PWD}/data:/app/data \
--v ${PWD}/artifacts:/app/artifacts \
-amls-solution \
-python prepare.py --timeout_seconds 600
+docker run --rm -v ${PWD}/data:/app/data -v ${PWD}/artifacts:/app/artifacts amls-solution python prepare.py --timeout_seconds 600
 ```
 
 ---
@@ -148,11 +145,7 @@ python prepare.py --timeout_seconds 600
 ### Task 2 – Model Training
 
 ```bash
-docker run --rm \
--v ${PWD}/data:/app/data \
--v ${PWD}/artifacts:/app/artifacts \
-amls-solution \
-python train.py --timeout_seconds 1800
+docker run --rm -v ${PWD}/data:/app/data -v ${PWD}/artifacts:/app/artifacts amls-solution python train.py --timeout_seconds 1800
 ```
 
 ---
@@ -160,23 +153,22 @@ python train.py --timeout_seconds 1800
 ### Task 2 – Prediction
 
 ```bash
-docker run --rm \
--v ${PWD}/data:/app/data \
--v ${PWD}/artifacts:/app/artifacts \
-amls-solution \
-python predict.py --timeout_seconds 600
+docker run --rm -v ${PWD}/data:/app/data -v ${PWD}/artifacts:/app/artifacts amls-solution python predict.py --timeout_seconds 600
 ```
 
 ---
+### Note on `data/predict`
+
+The `data/predict` directory is **not included** and must be created manually if you want to run `predict.py` / `predict_augmented.py` on your own images. Either copy a subset of images from the existing `data/train`, `data/validation`, or `data/calibration` folders, or add your own images.
+
+The expected format is a **Parquet file**, following the same schema used by the other dataset splits (see `clean.py`) — at minimum an `image` column (raw image bytes) and a `source_class` column (used to derive the real/AI label). 
+
+⚠️ Double-check the exact expected column names/schema against `predict.py` before relying on this — the description above is based on the format used in `clean.py` and may not exactly match what `predict.py` expects as input.
 
 ### Task 3 – Model Training
 
 ```bash
-docker run --rm \
--v ${PWD}/data:/app/data \
--v ${PWD}/artifacts:/app/artifacts \
-amls-solution \
-python train_augmented.py --timeout_seconds 1800
+docker run --rm -v ${PWD}/data:/app/data -v ${PWD}/artifacts:/app/artifacts amls-solution python train_augmented.py --timeout_seconds 1800
 ```
 
 ---
@@ -184,11 +176,7 @@ python train_augmented.py --timeout_seconds 1800
 ### Task 3 – Prediction
 
 ```bash
-docker run --rm \
--v ${PWD}/data:/app/data \
--v ${PWD}/artifacts:/app/artifacts \
-amls-solution \
-python predict_augmented.py --timeout_seconds 600
+docker run --rm -v ${PWD}/data:/app/data -v ${PWD}/artifacts:/app/artifacts amls-solution python predict_augmented.py --timeout_seconds 600
 ```
 
 ---
