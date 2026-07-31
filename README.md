@@ -163,8 +163,6 @@ The `data/predict` directory is **not included** and must be created manually if
 
 The expected format is a **Parquet file**, following the same schema used by the other dataset splits (see `clean.py`) — at minimum an `image` column (raw image bytes) and a `source_class` column (used to derive the real/AI label). 
 
-⚠️ Double-check the exact expected column names/schema against `predict.py` before relying on this — the description above is based on the format used in `clean.py` and may not exactly match what `predict.py` expects as input.
-
 ### Task 3 – Model Training
 
 ```bash
