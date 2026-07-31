@@ -216,8 +216,8 @@ A complete discussion of all experiments, ablation studies, and design decisions
 
 | Task | Result |
 |------|--------|
-| Task 2 | CNN with image-size metadata achieved Recall<sub>AI</sub> ≈ X while maintaining an FPR ≤ 20% |
-| Task 3 | *(Add results here.)* |
+| Task 2 | CNN with image-size metadata achieved Recall<sub>AI</sub> ≈ 0.77 while maintaining an FPR ≤ 20% |
+| Task 3 | After additional training on augmented data, the model achieved a Recall<sub>AI</sub> of approximately **0.80** while maintaining an FPR ≤ 20% on the original validation dataset. On the **validation_augmented** dataset, the model achieved a Recall<sub>AI</sub> of approximately **0.60** while maintaining the same FPR constraint. |
 
 ---
 
