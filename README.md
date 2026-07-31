@@ -32,9 +32,18 @@ Target performance:
 - Recall<sub>AI</sub> ≥ 0.8
 - False Positive Rate ≤ 20%
 
-## Task 3
+## Task 3 – Robustness Evaluation
 
-*Briefly describe Task 3 here.*
+Improve the model's robustness by training and evaluating it on intentionally degraded images.
+
+Applied augmentations include:
+
+- Rotation
+- Scaling
+- Reduced image quality
+- Additional image transformations
+
+The objective is to assess how well the classifier generalizes to images with varying quality and appearance while maintaining competitive performance.
 
 ---
 
