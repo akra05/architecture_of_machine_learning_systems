@@ -102,21 +102,17 @@ docker build -t amls-solution .
 
 ## 2. Download the dataset
 
-Download the dataset and place it under
+Download the dataset and extract its contents into the `solution/data/` directory.
+
+The final directory structure should look like:
 
 ```text
-solution/data/
-```
-
-Expected directory structure:
-
-```text
-data/
-├── train/
-├── validation/
-├── calibration/
-└── predict/
-```
+solution/
+└── data/
+    ├── train/
+    ├── validation/
+    ├── calibration/
+    └── predict/
 
 ---
 
