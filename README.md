@@ -47,6 +47,13 @@ The objective is to assess how well the classifier generalizes to images with va
 
 ---
 
+## Disclaimer
+
+- The dataset is **not included** in this repository. Download it from the official TU Berlin Cloud link above and verify that the full download completed successfully (e.g. check that the resulting image counts after `clean.py` match what is documented in this README) before running the pipeline — an incomplete or interrupted download can silently produce a smaller, differently balanced dataset without raising an error.
+- All required models and artifacts are generated automatically during execution.
+- The project was developed for a **CPU-only Docker environment without internet access**, following the requirements of the AMLS course.
+- The exact composition of the dataset (and therefore exact recall/FPR values reported below) is outside of this project's control, since it is provided externally via the course cloud link. Minor variations between runs or download instances may lead to slightly different training results than those reported here.
+
 # Dataset
 
 The dataset was provided as part of the course and can be downloaded from:
