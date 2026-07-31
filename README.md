@@ -113,8 +113,7 @@ solution/
     ├── validation/
     ├── calibration/
     └── predict/
----
----
+```
 
 ## 3. Execute the pipeline
 
